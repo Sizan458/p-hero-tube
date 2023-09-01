@@ -6,7 +6,7 @@ const categoryHandle = async()=>{
  const tabContainer =  document.getElementById('tab-container')
  data.data .forEach(category => {
     const  div = document.createElement('div');
-    div.innerHTML = ` <a onclick="cardsHandle('${category.category_id}')"  class="tab  ">${category.category}</a> `;
+    div.innerHTML = ` <a id='tab-button' onclick="cardsHandle('${category.category_id}')"  class="tab  ">${category.category}</a> `;
     tabContainer.appendChild(div);
  }); 
 }
@@ -23,8 +23,8 @@ const cardsHandle = async(categoryId)=>{
          const div=document.createElement('div');
    
       div.innerHTML =`
-      <div class="card  bg-base-100 shadow-xl w-[80%] mx-auto">
-      <figure class="w-[300px] h-[150px]"><img src="${videos.thumbnail}" /></figure>
+      <div class="card  bg-base-100 shadow-xl w-[80%] mx-auto ">
+      <figure class=" md:h-[150px]   xl:w-[296px] xl:h-[150px]"  ><img src="${videos.thumbnail}" /></figure>
       <div class="card-body">
        <div class="flex gap-2 -ml-[20px]  ">
        <div>
@@ -41,7 +41,10 @@ const cardsHandle = async(categoryId)=>{
       </div>
     </div>
       `;
-      videosContainer.appendChild(div);                    
+      videosContainer.appendChild(div);   
+      
+      
+       
    })
    // data not found function
    const notFound= document.getElementById('not-found')
@@ -52,8 +55,9 @@ const cardsHandle = async(categoryId)=>{
    }
    
     
-    
 }
+
+    
 
 categoryHandle();
 
