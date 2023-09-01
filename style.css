@@ -5,7 +5,7 @@
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
-
+/* tab on click css */
 #tab-button:hover{
     background-color:#FF1F3D;
     color: white;

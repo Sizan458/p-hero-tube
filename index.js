@@ -32,19 +32,19 @@ const cardsHandle = async(categoryId)=>{
        </div>
        <h2 class="mt-[10px] text-[17px] text-black">${videos.title}</h2>
        </div>
-         <div class="flex gap-3 ml-[22px] ">
-         <div><h2 class="  text-[17px] text-black">${videos.authors[0].profile_name}</h2></div>
-         <div><span>${videos.authors[0].verified}</span></div>
+         <div class="flex gap-1 ml-[22px] ">
+         <div><h2 class="  text-[17px] text-black">${ videos.authors[0].profile_name}</h2></div>
+         <div><span>${videos.authors[0].verified===true?"<img class='mt-1' src='images/fi_10629607.png'>":""}</span></div>
          </div>
          <div class="ml-[22px]"><h2>${videos.others.views}</h2> </div>
+         <div id='sec'  class="absolute -mt-[63px] ml-[50%] text-white">${ videos.others?.posted_date }</div>
         </div>
       </div>
     </div>
       `;
-      videosContainer.appendChild(div);   
+      videosContainer.appendChild(div); 
       
       
-       
    })
    // data not found function
    const notFound= document.getElementById('not-found')
@@ -54,7 +54,7 @@ const cardsHandle = async(categoryId)=>{
       notFound.classList.add('hidden')
    }
    
-    
+   
 }
 
     
