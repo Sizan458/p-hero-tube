@@ -17,7 +17,7 @@
             <button type="button" class="btn bg-slate-800">Sort by view</button>
            </div>
            <div>
-            <button type="button" class="btn btn-error" onclick="">Blog</button>
+            <button type="button"  ><a href="blog.html">Blog</a></button>
            </div>
           </div>
     </nav>
@@ -29,11 +29,17 @@
        <div id="tab-container" class=" w-[90%] mx-auto flex align-middle justify-center" > 
        </div>
         <!-- tab container end-->
-      <div id="videos-container" class="grid grid-cols-4">
+        <!-- data not found   container start-->
+      <div id="videos-container" class="grid grid-cols-4 gap-2 " >
         
       </div>
-
-
+       <div id="not-found" class="flex align-middle justify-center  mt-[10%] hidden">
+        <div>
+          <img class="ml-[30%]" src="images/Icon.png" alt="">
+          <h1  class="mt-5 text-2xl text-center">Oops!! Sorry, There is no content here</h1>
+        </div>
+       </div>
+       <!-- data not found   container end-->
     </main>
 </body>
 <!-- j.s file here -->

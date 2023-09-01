@@ -18,27 +18,41 @@ const cardsHandle = async(categoryId)=>{
    // show the videos cards dynamically 
    const videosContainer = document.getElementById('videos-container')
       videosContainer.textContent = '' ;
-       
-   data.data.forEach(videos=>{
-      const div=document.createElement('div');
+      data.data.forEach(videos=>{
+      // show the videos cards details dynamically
+         const div=document.createElement('div');
    
       div.innerHTML =`
-      <div class="card w-96 bg-base-100 shadow-xl">
-      <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+      <div class="card  bg-base-100 shadow-xl w-[80%] mx-auto">
+      <figure class="w-[300px] h-[150px]"><img src="${videos.thumbnail}" /></figure>
       <div class="card-body">
-        <h2 class="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary">Buy Now</button>
+       <div class="flex gap-2 -ml-[20px]  ">
+       <div>
+       <img class="w-[50px] h-[50px] rounded-full" src="${videos.authors[0].profile_picture}">
+       </div>
+       <h2 class="mt-[10px] text-[17px] text-black">${videos.title}</h2>
+       </div>
+         <div class="flex gap-3 ml-[22px] ">
+         <div><h2 class="  text-[17px] text-black">${videos.authors[0].profile_name}</h2></div>
+         <div><span>${videos.authors[0].verified}</span></div>
+         </div>
+         <div class="ml-[22px]"><h2>${videos.others.views}</h2> </div>
         </div>
       </div>
     </div>
       `;
-      videosContainer.appendChild(div);
+      videosContainer.appendChild(div);                    
    })
+   // data not found function
+   const notFound= document.getElementById('not-found')
+   if(data.data==0){
+      notFound.classList.remove('hidden')
+   }
     
-    //console.log(data.data)
+    
 }
 
 categoryHandle();
 
+// default tab function 
+cardsHandle('1000');
