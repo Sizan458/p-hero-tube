@@ -47,7 +47,10 @@ const cardsHandle = async(categoryId)=>{
    const notFound= document.getElementById('not-found')
    if(data.data==0){
       notFound.classList.remove('hidden')
+   }else{
+      notFound.classList.add('hidden')
    }
+   
     
     
 }
